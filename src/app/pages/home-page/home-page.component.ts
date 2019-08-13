@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  user: object = {
+    name: 'avocado the third'
+  };
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

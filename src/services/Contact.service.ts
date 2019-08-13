@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable, of } from 'rxjs';
+import { Subject, Observable, of, BehaviorSubject } from 'rxjs';
 import Contact from 'src/app/models/Contact';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-  contactsSubject = new Subject<Contact[]>();
+  contactsSubject = new BehaviorSubject<Contact[]>([]);
+
   constructor() {}
   contacts: Contact[] = [
     {
@@ -155,8 +156,8 @@ export class ContactService {
     if (filterBy && filterBy.term) {
       contactsToReturn = this._filter(filterBy.term);
     }
-    this.contacts = this._sort(contactsToReturn);
-    this.contactsSubject.next(this.contacts);
+    let contacts = this._sort(contactsToReturn);
+    this.contactsSubject.next(contacts);
   }
 
   public getContactById(id: string): Observable<Contact> {

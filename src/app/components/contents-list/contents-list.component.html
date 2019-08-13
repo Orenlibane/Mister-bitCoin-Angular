@@ -1,6 +1,22 @@
-<div class="contacts-container">
-  <app-contents-preview
-    *ngFor="let contact of Contacts"
-    [contact]="contact"
-  ></app-contents-preview>
+<div>
+  <h1 *ngIf="!currentContact">Users</h1>
+  <input
+    type="text"
+    placeholder="Filter ME!"
+    (input)="filterlist()"
+    [(ngModel)]="filterBy.term"
+  />
+  <div *ngIf="!currentContact" class="contacts-container">
+    <app-contents-preview
+      *ngFor="let contact of Contacts"
+      [contact]="contact"
+      (updateUser)="contactChange($event)"
+    ></app-contents-preview>
+  </div>
+  <div *ngIf="currentContact">
+    <h1>{{ currentContact.name }} Profile</h1>
+    <app-contents-details
+      [currentContact]="currentContact"
+    ></app-contents-details>
+  </div>
 </div>
