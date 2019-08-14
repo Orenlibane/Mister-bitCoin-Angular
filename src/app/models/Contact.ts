@@ -4,7 +4,8 @@ export default class Contact {
   constructor(
     public name: string = '',
     public email: string = '',
-    public phone: string = ''
+    public phone: string = '',
+    public coins: number = 0
   ) {}
 
   public setId?() {

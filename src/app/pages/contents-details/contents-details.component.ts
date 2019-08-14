@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ContactService } from 'src/services/Contact.service';
+import Contact from 'src/app/models/Contact';
 
 @Component({
   selector: 'app-contents-details',
@@ -6,10 +9,18 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./contents-details.component.scss']
 })
 export class ContentsDetailsComponent implements OnInit {
-  @Input() currentContact: any = null;
+  currentContact: any = null;
   // @Output() updateUser = new EventEmitter<Contact>();
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private ContactService: ContactService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentContact = this.ContactService.getContactById(
+      this.route.params.value.id
+    );
+    console.log(this.currentContact);
+  }
 }

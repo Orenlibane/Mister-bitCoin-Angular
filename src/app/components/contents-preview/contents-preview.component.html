@@ -3,6 +3,8 @@
     <img src="https://robohash.org/d" alt="" />
     {{ contact.name }}
     {{ contact.email }}
-    <button (click)="contactDet()">Enter</button>
+    <a [routerLink]="['/contact', contact._id, { details: true }]"
+      ><button>Enter</button></a
+    >
   </p>
 </div>

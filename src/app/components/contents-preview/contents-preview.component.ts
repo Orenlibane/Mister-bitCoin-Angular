@@ -11,9 +11,9 @@ export class ContentsPreviewComponent implements OnInit {
   @Output() updateUser = new EventEmitter<Contact>();
 
   constructor() {}
-  contactDet() {
-    this.updateUser.emit(this.contact);
-    console.log(this.contact);
-  }
+  // contactDet() {
+  //   this.updateUser.emit(this.contact);
+  //   console.log(this.contact);
+  // }
   ngOnInit() {}
 }

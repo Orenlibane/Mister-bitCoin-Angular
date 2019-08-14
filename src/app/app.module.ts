@@ -10,6 +10,9 @@ import { ContentsFilterComponent } from './components/contents-filter/contents-f
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContentsEditComponent } from './pages/contents-edit/contents-edit.component';
 import { ContentsDetailsComponent } from './pages/contents-details/contents-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,21 @@ import { ContentsDetailsComponent } from './pages/contents-details/contents-deta
     ContentsFilterComponent,
     ContentsDetailsComponent,
     HomePageComponent,
-    ContentsEditComponent
+    ContentsEditComponent,
+    NavbarComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: HomePageComponent },
+      { path: 'contacts', component: ContentsPageComponent },
+      { path: 'contact/:id', component: ContentsDetailsComponent }
+      // { path: 'products/:productId', component: ProductDetailsComponent }
+    ])
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
