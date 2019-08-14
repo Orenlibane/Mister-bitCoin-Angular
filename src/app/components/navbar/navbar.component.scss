@@ -1,11 +1,20 @@
 .nav-bar {
-  width: 50vw;
-  background: gray;
+  width: 75vw;
+  height: 5vh;
   margin: 0 auto;
-  border: 1px white solid;
-  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .body {
   background: gray;
+  border-bottom: 2px white solid;
+}
+
+.nav-bar a {
+  transition: 0.3s ease-out transform;
+}
+.nav-bar a:hover {
+  color: white;
+  transform: scale(1.1);
 }

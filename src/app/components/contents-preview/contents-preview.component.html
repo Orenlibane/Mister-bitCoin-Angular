@@ -1,10 +1,12 @@
 <div class="user">
-  <p>
-    <img src="https://robohash.org/d" alt="" />
-    {{ contact.name }}
-    {{ contact.email }}
-    <a [routerLink]="['/contact', contact._id, { details: true }]"
-      ><button>Enter</button></a
-    >
-  </p>
+  <div class="flex">
+    <img src="{{ imgPreview }}" alt="" />
+    <div class="flex column both-align-center">
+      {{ contact.name }}
+      {{ contact.email }}
+      <a [routerLink]="['/contact', contact._id, { details: true }]"
+        ><button>Enter</button></a
+      >
+    </div>
+  </div>
 </div>

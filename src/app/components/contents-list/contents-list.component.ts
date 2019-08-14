@@ -13,10 +13,6 @@ export class ContentsListComponent implements OnInit {
   filterBy: any = { term: null };
   constructor(private ContactService: ContactService) {}
 
-  contactChange(choosedContact) {
-    this.currentContact = choosedContact;
-  }
-
   filterlist() {
     this.ContactService.getContacts(this.filterBy);
   }

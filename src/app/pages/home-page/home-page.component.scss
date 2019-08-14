@@ -1,8 +1,14 @@
 .home-page {
-  background: url('../../../assets/bitCoin-wallpaper.jpg');
-  background-position: center;
-  background-size: cover;
   color: white;
   text-align: center;
   height: 100vh;
+  font-size: 1.5rem;
+}
+
+.user-info {
+  width: 30vw;
+}
+
+.home-page ul {
+  text-align: left;
 }

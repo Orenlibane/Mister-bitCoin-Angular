@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import Contact from 'src/app/models/Contact';
-import { getMaxListeners } from 'cluster';
 
 @Injectable({
   providedIn: 'root'

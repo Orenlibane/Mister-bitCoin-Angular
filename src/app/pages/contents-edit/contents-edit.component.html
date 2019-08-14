@@ -1,1 +1,24 @@
-<p>contents-edit works!</p>
+<section class="flex sub-center column contact-edit">
+  <h1>Weclome to Your contact Edit Page</h1>
+
+  <div class="flex column">
+    Name:<input
+      type="text"
+      [(ngModel)]="currentContact.name"
+      placeholder="{{ currentContact.name }}"
+    />
+    Email:<input
+      type="text"
+      [(ngModel)]="currentContact.email"
+      placeholder="{{ currentContact.email }}"
+    />
+    Phone:<input
+      type="text"
+      [(ngModel)]="currentContact.phone"
+      placeholder="{{ currentContact.phone }}"
+    />
+    <a [routerLink]="['/contacts']"
+      ><button (click)="updateContact()">Submit</button></a
+    >
+  </div>
+</section>

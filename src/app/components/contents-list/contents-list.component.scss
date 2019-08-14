@@ -1,5 +1,21 @@
 .contacts-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 700px;
+  max-width: 1500px;
+  justify-content: center;
+}
+
+.contacts-list {
+  height: 95vh;
+}
+
+.contacts-list h1 {
+  color: white;
+  text-align: center;
+}
+
+.contacts-list input,
+button {
+  border-radius: 5px;
+  padding: 5px;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ContactService } from 'src/services/Contact.service';
 
 @Component({
   selector: 'app-contents-edit',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contents-edit.component.scss']
 })
 export class ContentsEditComponent implements OnInit {
+  currentContact: any = null;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private ContactService: ContactService
+  ) {}
 
-  ngOnInit() {
+  updateContact() {
+    this.ContactService.saveContact(this.currentContact);
   }
 
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const id = params.id;
+      if (id) {
+        this.ContactService.getContactById(id).subscribe(contact => {
+          this.currentContact = { ...contact };
+        });
+      }
+    });
+  }
 }

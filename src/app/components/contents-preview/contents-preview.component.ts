@@ -10,10 +10,10 @@ export class ContentsPreviewComponent implements OnInit {
   @Input() contact: any = null;
   @Output() updateUser = new EventEmitter<Contact>();
 
+  imgPreview = null;
   constructor() {}
-  // contactDet() {
-  //   this.updateUser.emit(this.contact);
-  //   console.log(this.contact);
-  // }
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.imgPreview = 'https://robohash.org/' + this.contact.name;
+  }
 }

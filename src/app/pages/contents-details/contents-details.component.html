@@ -1,4 +1,9 @@
-<div>
+<div class="contact-details flex column sub-center">
+  <h1>Contact Detailes Page</h1>
   <div>{{ currentContact.name }}</div>
   <div>{{ currentContact.email }}</div>
+  <a [routerLink]="['/contact/edit/', currentContact._id, { details: true }]"
+    ><button>Edit Me</button></a
+  >
+  <button (click)="deleteContact()">Delete contact</button>
 </div>

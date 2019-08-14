@@ -34,8 +34,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
       { path: 'contacts', component: ContentsPageComponent },
-      { path: 'contact/:id', component: ContentsDetailsComponent }
-      // { path: 'products/:productId', component: ProductDetailsComponent }
+      { path: 'contact/:id', component: ContentsDetailsComponent },
+      { path: 'contact/edit/:id', component: ContentsEditComponent }
     ])
   ],
   providers: [],

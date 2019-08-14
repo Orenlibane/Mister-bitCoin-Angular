@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ContactService } from 'src/services/Contact.service';
 import Contact from 'src/app/models/Contact';
 
@@ -10,17 +10,24 @@ import Contact from 'src/app/models/Contact';
 })
 export class ContentsDetailsComponent implements OnInit {
   currentContact: any = null;
-  // @Output() updateUser = new EventEmitter<Contact>();
 
   constructor(
     private route: ActivatedRoute,
-    private ContactService: ContactService
+    private ContactService: ContactService,
+    private router: Router
   ) {}
 
+  deleteContact() {
+    this.ContactService.deleteContact(this.currentContact._id);
+    this.router.navigate(['/contacts']);
+  }
+
   ngOnInit() {
-    this.currentContact = this.ContactService.getContactById(
-      this.route.params.value.id
-    );
-    console.log(this.currentContact);
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.ContactService.getContactById(id).subscribe(contact => {
+        this.currentContact = contact;
+      });
+    });
   }
 }
