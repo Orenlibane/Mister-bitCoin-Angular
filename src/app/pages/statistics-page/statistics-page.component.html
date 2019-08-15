@@ -1,0 +1,8 @@
+<div class="statistics-details">
+  <app-chart *ngIf="marketPriceData" [chartData]="marketPriceData"> </app-chart>
+  <app-chart *ngIf="transcPerDay" [chartData]="transcPerDay"></app-chart>
+
+  <div *ngIf="!marketPriceData && !transcPerDay">
+    Loading...
+  </div>
+</div>

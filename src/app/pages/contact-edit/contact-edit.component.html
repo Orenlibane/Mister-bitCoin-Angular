@@ -1,0 +1,10 @@
+<section class="flex sub-center column contact-edit">
+  <h1>Weclome to Your contact Edit Page</h1>
+
+  <div class="flex column">
+    <input type="text" [(ngModel)]="currentContact.name" placeholder="Name" />
+    <input type="text" [(ngModel)]="currentContact.email" placeholder="Email" />
+    <input type="text" [(ngModel)]="currentContact.phone" placeholder="Phone" />
+    <button (click)="updateContact()">Submit</button>
+  </div>
+</section>

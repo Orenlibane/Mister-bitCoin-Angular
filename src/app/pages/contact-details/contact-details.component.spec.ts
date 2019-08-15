@@ -1,16 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentsDetailsComponent } from './contents-details.component';
+import { ContentsDetailsComponent } from './contact-details.component';
 
-describe('ContentsDetailsComponent', () => {
+describe('ContactDetailsComponent', () => {
   let component: ContentsDetailsComponent;
   let fixture: ComponentFixture<ContentsDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentsDetailsComponent ]
-    })
-    .compileComponents();
+      declarations: [ContentsDetailsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

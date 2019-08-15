@@ -6,7 +6,8 @@ import Contact from 'src/app/models/Contact';
   providedIn: 'root'
 })
 export class ContactService {
-  contactsSubject = new BehaviorSubject<Contact[]>([]);
+  private contactsSubject = new BehaviorSubject<Contact[]>([]);
+  public contactsObservable = this.contactsSubject.asObservable();
 
   constructor() {}
   contacts: Contact[] = [
@@ -170,7 +171,7 @@ export class ContactService {
     });
   }
 
-  public getContacts(filterBy = null) {
+  public getContacts(filterBy: FilterModel = null) {
     let contactsToReturn = this.contacts;
     if (filterBy && filterBy.term) {
       contactsToReturn = this._filter(filterBy.term);

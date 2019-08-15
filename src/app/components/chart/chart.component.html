@@ -1,0 +1,13 @@
+<div class="chart-style flex column both-align-center" *ngIf="chartData">
+  <h1>{{ currentChartData.title }}</h1>
+  <google-chart
+    [title]="currentChartData.title"
+    [type]="currentChartData.type"
+    [data]="currentChartData.data"
+    [columnNames]="currentChartData.columnNames"
+    [options]="currentChartData.options"
+    [height]="currentChartData.height"
+    style="width:100%"
+  >
+  </google-chart>
+</div>

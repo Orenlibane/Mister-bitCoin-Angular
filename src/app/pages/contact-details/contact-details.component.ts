@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactService } from 'src/services/Contact.service';
 import Contact from 'src/app/models/Contact';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-contents-details',
-  templateUrl: './contents-details.component.html',
-  styleUrls: ['./contents-details.component.scss']
+  selector: 'app-contact-details',
+  templateUrl: './contact-details.component.html',
+  styleUrls: ['./contact-details.component.scss']
 })
-export class ContentsDetailsComponent implements OnInit {
-  currentContact: any = null;
+export class ContactDetailsComponent implements OnInit, OnDestroy {
+  currentContact: Contact = null;
+  subs: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,11 +25,14 @@ export class ContentsDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.subs = this.route.params.subscribe(params => {
       const id = params['id'];
       this.ContactService.getContactById(id).subscribe(contact => {
         this.currentContact = contact;
       });
     });
+  }
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 }

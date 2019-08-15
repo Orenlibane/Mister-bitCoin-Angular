@@ -6,7 +6,8 @@
 }
 
 .contacts-list {
-  height: 95vh;
+  min-height: 95vh;
+  overflow: auto;
 }
 
 .contacts-list h1 {

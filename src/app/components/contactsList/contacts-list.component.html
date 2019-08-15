@@ -1,5 +1,4 @@
 <div class="contacts-list">
-  <h1>Users</h1>
   <div class="flex space-around">
     <input
       type="text"
@@ -8,13 +7,14 @@
       (input)="filterlist()"
       [(ngModel)]="filterBy.term"
     />
-
-    <a [routerLink]="['/contact/edit/']"> <button>Add Contact</button></a>
+    <a routerLink="/contact/edit/">
+      <button>Add Contact</button>
+    </a>
   </div>
   <div class="contacts-container">
-    <app-contents-preview
-      *ngFor="let contact of Contacts"
+    <app-contacts-preview
+      *ngFor="let contact of contacts"
       [contact]="contact"
-    ></app-contents-preview>
+    ></app-contacts-preview>
   </div>
 </div>

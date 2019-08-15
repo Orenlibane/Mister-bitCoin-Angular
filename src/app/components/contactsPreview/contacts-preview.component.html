@@ -1,11 +1,11 @@
 <div class="user">
   <div class="flex">
-    <img src="{{ imgPreview }}" alt="" />
+    <img src="{{ userImg }}" alt="" />
     <div class="flex column both-align-center">
       {{ contact.name }}
       {{ contact.email }}
-      <a [routerLink]="['/contact', contact._id, { details: true }]"
-        ><button>Enter</button></a
+      <a [routerLink]="['/contact', contact._id]"
+        ><button (click)="onUpdate()">Enter</button></a
       >
     </div>
   </div>

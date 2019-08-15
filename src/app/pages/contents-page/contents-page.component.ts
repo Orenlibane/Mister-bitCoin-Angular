@@ -9,5 +9,4 @@ export class ContentsPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  user = 'oren';
 }

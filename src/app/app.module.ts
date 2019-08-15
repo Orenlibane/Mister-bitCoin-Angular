@@ -4,39 +4,37 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentsPageComponent } from './pages/contents-page/contents-page.component';
-import { ContentsListComponent } from './components/contents-list/contents-list.component';
-import { ContentsPreviewComponent } from './components/contents-preview/contents-preview.component';
-import { ContentsFilterComponent } from './components/contents-filter/contents-filter.component';
+import { contactsListComponent } from './components/contactsList/contacts-list.component';
+import { ContactsPreviewComponent } from './components/contactsPreview/contacts-preview.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ContentsEditComponent } from './pages/contents-edit/contents-edit.component';
-import { ContentsDetailsComponent } from './pages/contents-details/contents-details.component';
+import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
+import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { StatisticsPageComponent } from './pages/statistics-page/statistics-page.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentsPageComponent,
-    ContentsListComponent,
-    ContentsPreviewComponent,
-    ContentsFilterComponent,
-    ContentsDetailsComponent,
+    contactsListComponent,
+    ContactsPreviewComponent,
+    ContactDetailsComponent,
     HomePageComponent,
-    ContentsEditComponent,
-    NavbarComponent
+    ContactEditComponent,
+    NavbarComponent,
+    StatisticsPageComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: HomePageComponent },
-      { path: 'contacts', component: ContentsPageComponent },
-      { path: 'contact/:id', component: ContentsDetailsComponent },
-      { path: 'contact/edit/:id', component: ContentsEditComponent }
-    ])
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

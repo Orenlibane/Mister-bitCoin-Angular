@@ -2,7 +2,7 @@
   <h1>Contact Detailes Page</h1>
   <div>{{ currentContact.name }}</div>
   <div>{{ currentContact.email }}</div>
-  <a [routerLink]="['/contact/edit/', currentContact._id, { details: true }]"
+  <a [routerLink]="['/contact/edit', { id: currentContact._id }]"
     ><button>Edit Me</button></a
   >
   <button (click)="deleteContact()">Delete contact</button>

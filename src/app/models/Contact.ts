@@ -9,10 +9,10 @@ export default class Contact {
   ) {}
 
   public setId?() {
-    this._id = this._makeId();
+    this._id = Contact._makeId();
   }
 
-  private _makeId?(length = 10) {
+  private static _makeId(length = 10) {
     let txt = '';
     const possible =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
