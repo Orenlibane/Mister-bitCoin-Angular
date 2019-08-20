@@ -1,4 +1,25 @@
 .contact-edit {
   height: 95vh;
   color: white;
+
+  img {
+    background: rgb(255, 255, 255, 0.6);
+    border-radius: 10px;
+  }
+
+  input {
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+  button {
+    max-width: 80px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }

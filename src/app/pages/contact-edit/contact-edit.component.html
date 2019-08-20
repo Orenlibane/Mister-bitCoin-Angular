@@ -1,7 +1,8 @@
 <section class="flex sub-center column contact-edit">
-  <h1>Weclome to Your contact Edit Page</h1>
+  <h1>Welcome to Your contact Edit Page</h1>
 
-  <div class="flex column">
+  <div class="flex column both-align-center">
+    <img src="{{ userImg }} " alt="" />
     <input type="text" [(ngModel)]="currentContact.name" placeholder="Name" />
     <input type="text" [(ngModel)]="currentContact.email" placeholder="Email" />
     <input type="text" [(ngModel)]="currentContact.phone" placeholder="Phone" />

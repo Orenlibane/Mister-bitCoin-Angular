@@ -20,6 +20,7 @@ export class ChartComponent implements OnInit {
   };
 
   assignChartData() {
+    console.log(this.chartData);
     let chartData = this.chartData.values.map(value => {
       const date = new Date(value.x * 1000);
       const arrangedDate = `${date.getDate()}/${date.getMonth() + 1}`;

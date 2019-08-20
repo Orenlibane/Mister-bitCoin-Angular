@@ -1,9 +1,15 @@
 <div class="contact-details flex column sub-center">
   <h1>Contact Detailes Page</h1>
-  <div>{{ currentContact.name }}</div>
-  <div>{{ currentContact.email }}</div>
-  <a [routerLink]="['/contact/edit', { id: currentContact._id }]"
-    ><button>Edit Me</button></a
-  >
-  <button (click)="deleteContact()">Delete contact</button>
+  <div class="contact">
+    <img src="{{ userImg }}" alt="" />
+
+    <div>Name:{{ currentContact.name }}</div>
+    <div>Email:{{ currentContact.email }}</div>
+  </div>
+  <div class="buttons flex">
+    <a [routerLink]="['/contact/edit', { id: currentContact._id }]"
+      ><button>Edit Me</button></a
+    >
+    <button (click)="deleteContact()">Delete contact</button>
+  </div>
 </div>

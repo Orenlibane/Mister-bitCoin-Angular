@@ -11,6 +11,12 @@ import Contact from 'src/app/models/Contact';
 export class ContactEditComponent implements OnInit {
   currentContact: Contact = null;
 
+  get userImg() {
+    if (this.currentContact.name) {
+      return 'https://robohash.org/' + this.currentContact.name;
+    } else return 'https://robohash.org/' + Math.random();
+  }
+
   constructor(
     private route: ActivatedRoute,
     private ContactService: ContactService,

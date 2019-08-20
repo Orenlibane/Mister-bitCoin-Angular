@@ -8,15 +8,15 @@
 .contacts-list {
   min-height: 95vh;
   overflow: auto;
-}
 
-.contacts-list h1 {
-  color: white;
-  text-align: center;
-}
+  h1 {
+    color: white;
+    text-align: center;
+  }
 
-.contacts-list input,
-button {
-  border-radius: 5px;
-  padding: 5px;
+  input,
+  button {
+    border-radius: 5px;
+    padding: 5px;
+  }
 }

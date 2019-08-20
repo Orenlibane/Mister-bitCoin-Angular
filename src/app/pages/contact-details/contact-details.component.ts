@@ -13,6 +13,10 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   currentContact: Contact = null;
   subs: Subscription;
 
+  get userImg() {
+    return 'https://robohash.org/' + this.currentContact.name;
+  }
+
   constructor(
     private route: ActivatedRoute,
     private ContactService: ContactService,
